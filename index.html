@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ECOTECH — Home</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+
+  <div class="header-wrap">
+    <header class="header">
+      <div class="brand">ECOTECH</div>
+      <nav class="nav-links" aria-label="Main navigation">
+<a href="#" onclick="sharePage()">Share</a>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="report.html">Monthly Report</a>
+        <a href="achievements.html">Achievements</a>
+      </nav>
+    </header>
+    <div class="subnav">ECOTECH &nbsp;&nbsp; Home &nbsp;&nbsp; About &nbsp;&nbsp; Contact</div>
+  </div>
+
+  <main class="container" role="main">
+    <h1 class="page-title">Awareness is the first step to change.</h1>
+
+    <p class="lead">
+      We create visibility for low-profile renewable innovations and test approaches that work where people need them most — villages with limited resources and crowded cities battling pollution.
+    </p>
+
+    <div class="meta-row">
+      <div class="date-block">
+        <span class="date-num">0505</span>
+        <span class="date-text">August<br/>2025</span>
+      </div>
+
+      <div style="width:28px"></div>
+
+      <div>
+        <div class="links-line">Monthly Report | Achievements</div>
+        <div class="site-dot">E C O T E C H . C O</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="email">ecotech.original.co@gmail.com</div>
+    <div class="small">Monthly Report • Achievements</div>
+  </footer>
+<div class="social-corner">
+  <a href="https://instagram.com/ecotech.original.co" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="mailto:ecotech.original.co@gmail.com" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+<script>
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: "Check out this page from ECOTECH!",
+      url: window.location.href
+    });
+  } else {
+    // Fallback if Web Share API is not supported
+    const dummy = document.createElement('input');
+    document.body.appendChild(dummy);
+    dummy.value = window.location.href;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+    alert("Link copied to clipboard!");
+  }
+}
+</script>
+
+</body>
+</html>

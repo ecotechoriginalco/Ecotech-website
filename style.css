@@ -1,0 +1,326 @@
+/* style.css - ECOTECH site styling (single shared stylesheet) */
+
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+:root{
+  --bg: ##d0f0c0;
+  --text: #1c1c1c;
+  --muted: #666666;
+  --accent: #00a86b; /* green accent */
+  --border: #e6e6e6;
+  --brand-letter-gap: 14px;
+  --max-width: 1000px;
+  --content-pad: 48px;
+  --font-sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Page layout */
+
+ body{
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: #a8cfa0; /* soft celadon green */
+  line-height: 1.45;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom: 60px; /* room for footer */
+}
+
+
+/* Header / nav */
+.header-wrap{
+  border-bottom: 1.5px solid var(--border);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px var(--content-pad);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand {
+  font-weight:700;
+  font-size:20px;
+  letter-spacing: 3px;
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.nav-links a{
+  text-decoration:none;
+  color: var(--text);
+  font-weight:700;
+  font-size:14px;
+  padding:6px 4px;
+  transition: color .18s ease, transform .12s ease;
+}
+.nav-links a:hover{
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Subnav small line under header */
+.subnav{
+  max-width: var(--max-width);
+  margin: 10px auto;
+  padding: 0 var(--content-pad) 18px;
+  color: var(--muted);
+  font-size:13px;
+  letter-spacing: 0.6px;
+}
+
+/* Main content container */
+.container{
+  max-width: var(--max-width);
+  margin: 14px auto;
+  padding: 20px var(--content-pad) 60px;
+}
+
+/* Page header text */
+.page-title{
+  font-size: 36px;
+  font-weight: 800;
+  margin: 26px 0 12px;
+  text-align:center;
+  letter-spacing: -0.3px;
+}
+
+.lead{
+  max-width: 860px;
+  margin: 10px auto 26px;
+  font-size: 16px;
+  color: #222;
+  text-align:center;
+}
+
+/* date block and small metadata area (left aligned on larger screens) */
+.meta-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  margin-top: 12px;
+  flex-wrap:wrap;
+}
+.date-block{
+  text-align:center;
+  font-family: var(--font-sans);
+}
+.date-num{
+  display:block;
+  font-weight:900;
+  font-size:28px;
+  letter-spacing:1px;
+}
+.date-text{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* highlighted link line */
+.links-line{
+  margin-top:22px;
+  font-size:15px;
+  font-weight:700;
+  text-align:center;
+  color:var(--text);
+}
+
+/* Big spaced brand text */
+.site-dot {
+  margin-top:22px;
+  text-align:center;
+  font-weight:900;
+  font-size:18px;
+  letter-spacing: var(--brand-letter-gap);
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* Footer */
+.footer{
+  position: relative;
+  max-width: var(--max-width);
+  margin: 36px auto 0;
+  padding: 18px var(--content-pad);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.footer .email { font-weight:600; color:var(--text); }
+.footer .small { color:var(--muted); font-size:13px; }
+
+/* Page content variations (simple card look for "will be adding shortly") */
+.placeholder{
+  border: 1px dashed var(--border);
+  padding: 30px;
+  margin-top: 18px;
+  color: var(--muted);
+  text-align:center;
+  background: #fbfbfb;
+}
+
+/* Contact details style */
+.contact-list{
+  max-width:560px;
+  margin:18px auto;
+  text-align:center;
+}
+.contact-list p{ margin:10px 0; font-weight:600; }
+
+/* Achievements/report tiny grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+.card{
+  border:1px solid var(--border);
+  padding:18px;
+  background:#fff;
+  text-align:left;
+}
+
+/* Responsiveness */
+@media (min-width: 900px){
+  .container { padding-left: 0; padding-right: 0; }
+  .header { padding-left: 0; padding-right: 0; }
+  .subnav { padding-left: 0; padding-right: 0; }
+  .footer { padding-left: 0; padding-right: 0; }
+  .meta-row { justify-content:flex-start; }
+  .lead { text-align:left; }
+  .page-title { text-align:left; }
+  .site-dot { text-align:left; }
+}
+
+/* small screens */
+@media (max-width:520px){
+  .page-title{ font-size:28px; }
+  .brand{ font-size:18px; }
+  .nav-links{ gap:10px; font-size:13px; }
+}
+/* Accent and text colors updated */
+:root {
+  --accent: #00a86b; /* from PDF */
+  --text: #222222;
+}
+
+/* Social media floating corner */
+.social-corner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 50;
+}
+
+.social-corner a {
+  color: var(--accent);
+  font-size: 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-corner a:hover {
+  transform: scale(1.2);
+  color: #008f5c;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.button-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.button-column .toggle-btn {
+  width: 100%;
+  text-align: center;
+}
+
+.button-grid .toggle-btn {
+  width: 100%;
+  text-align: center;
+}
+/* Big green button style */
+.toggle-btn {
+  display: inline-block;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Smaller green button */
+.toggle-btn {
+  display: inline-block;
+  padding: 8px 14px; /* smaller padding */
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #008f5c; /* darker green */
+  transform: translateY(-1px);
+}
+
+/* Row of buttons close together */
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* small space between buttons */
+  margin: 20px 0;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | ECOTECH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="ECOTECH Logo" class="site-logo">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Monthly Report</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="#" onclick="sharePage()">Share</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1 class="page-title">ABOUT US- 02</h1>
+    <p class="lead">
+      We’re spotlighting fire inventions in India that use renewable resources but never got the hype they deserve. 
+      Our mission is to spread awareness, inspire innovation, and build a greener future.
+    </p>
+
+    <div class="meta-row">
+      <div class="date-block">
+        <span class="day">05</span>
+        <span class="month-year">August 2025</span>
+      </div>
+    </div>
+
+    <!-- Green Button Format -->
+    <div class="button-grid">
+      <button class="toggle-btn" onclick="window.open('Analytical.pdf', '_blank')">Analytical Report</button>
+    <button class="toggle-btn" onclick="window.open('Insta.pdf', '_blank')">Know Insta</button>
+    </div>
+
+    <!-- Collapsible Full Report -->
+    <button class="toggle-btn" onclick="toggleReport()">Read Full Analytical Report</button>
+    <div id="fullReport" style="display:none; margin-top:20px;">
+      <!-- Your PDF text will go here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ECOTECH | Contact: info@ecotech.com</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          text: "Check out this page from ECOTECH!",
+          url: window.location.href
+        });
+      } else {
+        const dummy = document.createElement('input');
+        document.body.appendChild(dummy);
+        dummy.value = window.location.href;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        alert("Link copied to clipboard!");
+      }
+    }
+
+    function toggleReport() {
+      var report = document.getElementById("fullReport");
+      if (report.style.display === "none") {
+        report.style.display = "block";
+      } else {
+        report.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
